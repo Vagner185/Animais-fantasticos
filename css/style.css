@@ -81,7 +81,6 @@ body {
   height: 10px;
   margin-right: 10px;
   background: #fb5;
-
 }
 
 .animais p {
@@ -94,6 +93,10 @@ body {
   height: 370px;
   overflow-y: scroll;
   grid-column: 2;
+}
+
+.animais-lista li {
+  cursor: pointer;
 }
 
 .animais-lista::-webkit-scrollbar {
@@ -214,3 +217,24 @@ body {
   }
 }
 
+.js-tabcontent section {
+  display: none;
+  animation: show .5s forwards;
+ /* forwards serve para que quando a animação chegar no fim,ela fique
+ no estado final dela(to) sem forwards a animação volta pr oestad inicial(from)*/
+}
+
+.js-tabcontent section.ativo {
+  display: block !important;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
